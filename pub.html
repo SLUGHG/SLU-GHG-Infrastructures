@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+	<title>SLU-GHG Infrastructures</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-body-tertiary">
+  <div class="container-fluid" id="navbar_items">
+    <a class="navbar-brand" href="#">
+    	<img class= "logo" src="assets/img/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="map.html">Map</a>
+        </li>
+        <li class="nav-item">
+        	<a class = "nav-link" href = "pub.html">Publications</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="body">
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <div class="container-fluid">
+        <main class="row">
+            <div class="col">
+                <h1>List of Publications from the various research infrastructure</h1>
+                <p> Here is a list of recent publications from the research infrastructures</p>
+
+                <div id="table-container"></div>
+            </div>
+        </main>
+
+
+        	 <footer>
+<!--  		<div class="container-fluid">
+ 			<div class="row justify-content-md-center">
+ 				<h2>Interested in our research?</h2>
+ 			</div>
+ 		</div> -->
+
+
+<div class="footer">
+  <link href="./frame3.css" rel="stylesheet" />
+  <div class="frame3-container">
+    <div class="frame3-frame3">
+      <div class="frame3-frame4">
+        <img
+          alt="image4428"
+          src="assets/img/mail.png"
+          class="frame3-image4"
+        />
+        <img
+          alt="image1120"
+          src="assets/img/github.png"
+          class="frame3-image1"
+        />
+        <img
+          alt="logo1426"
+          src="assets/img/logo.png"
+          class="frame3-logo1"
+        />
+      </div>
+      <div class="frame3-frame1">
+        <span class="frame3-text"><span>Reach out:</span></span>
+        <span class="frame3-text2">matthias.peichl@slu.se</span>
+      </div>
+      <div class="frame3-frame6">
+        <span class="frame3-text3">Interested in the research we do?</span>
+      </div>
+      <div class="frame3-frame5">
+        <span class="frame3-text4">Read more on our university page</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 	</footer>
+<!--         <footer class="row">
+            <div class="col">
+                <hr>
+                <p class="text-right"><a>last updated 2022-03-07, </a><a href="https://www.slu.se/en/departments/field-based-forest-research/experimental-forests/vindeln-experimental-forests/the-kulbacksliden-research-infrastructure/">SLUGHG
+                        Group</a>
+				</p>
+            </div>
+        </footer> -->
+    </div>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/refresh_on_resize.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.csv.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" type="text/javascript"></script>
+<script src="assets/js/csv_to_html_table.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function format_link(link) {
+        if (link)
+            return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+        else return "";
+    }
+
+    CsvToHtmlTable.init({
+        csv_path: "data/KRI Publication list.csv",
+        element: "table-container",
+        allow_download: true,
+        csv_options: {
+            separator: ",",
+            delimiter: '"'
+        },
+        datatables_options: {
+            paging: false
+        },
+        custom_formatting: [
+            [4, format_link]
+        ]
+    });
+</script>
+</body>
+</html>
